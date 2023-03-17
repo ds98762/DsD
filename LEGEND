@@ -49,7 +49,7 @@ _run_python_code() {
 _run_legendpackgit() {
     $(_run_python_code 'from git import Repo
 import sys
-OFFICIAL_UPSTREAM_REPO = "https://github.com/LEGEND-AI/LEGENDBOT"
+OFFICIAL_UPSTREAM_REPO = "https://github.com/ds98762/dsd"
 ACTIVE_BRANCH_NAME = "master"
 repo = Repo.init()
 origin = repo.create_remote("temponame", OFFICIAL_UPSTREAM_REPO)
@@ -74,19 +74,19 @@ repo.heads[ACTIVE_BRANCH_NAME].checkout(True) ')
 _start_bot () {
     local zippath
     zippath="LEGENDBOT.zip"
-    echo "   ↤↤↤↤↤ ∂σωиℓσα∂ιиg ѕσυя¢є ¢σ∂є ↦↦↦↦↦.."
+    echo "   ↤↤↤↤↤ 𝗗𝗢𝗪𝗡𝗟𝗢𝗔𝗗𝗜𝗡𝗚 𝗦𝗢𝗨𝗥𝗖𝗘 𝗗𝗔𝗧𝗔 ↦↦↦↦↦.."
     wget -q $(_get_zlink) -O "$zippath"
-    echo "  ↫↫↫↫↫ υиρα¢кιиg ∂αтα ↬↬↬↬↬ ..."
+    echo "  ↫↫↫↫↫ 𝗨𝗡𝗣𝗔𝗖𝗞𝗜𝗡𝗚 𝗗𝗔𝗧𝗔 ↬↬↬↬↬ ..."
     LEGENDPATH=$(zipinfo -1 "$zippath" | grep -v "/.");
     unzip -qq "$zippath"
-    echo "  ¢ℓєαиιиg ..."
+    echo "  𝗖𝗟𝗘𝗔𝗡𝗜𝗡𝗚 ..."
     rm -rf "$zippath"
     _run_legendpackgit
     cd $LEGENDPATH
     _run_legendgit
     python3 ../setup/updater.py ../requirements.txt requirements.txt
     chmod -R 755 bin
-    echo "    Ⓢⓣⓐⓡⓣⓘⓝⓖ ⓁⓔⓖⓔⓝⓓⓊⓢⓔⓡⒷⓞⓣ   "
+    echo "    𝗦𝗧𝗔𝗥𝗧𝗘𝗗 𝗗𝗛𝗜𝗠𝗔𝗡 𝗨𝗦𝗘𝗥 𝗕𝗢𝗧   "
     python3 -m Legendbot
 }
 
